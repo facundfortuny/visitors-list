@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Visitor } from '../shared/models/visitor.model';
 
 @Component({
   selector: 'app-visitors-list',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./visitors-list.component.scss'],
 })
 export class VisitorsListComponent implements OnInit {
-  visitorsList: Array<{ name: string; email: string }> = [];
+  visitorsList: Array<Visitor> = [];
 
   constructor() {}
 
