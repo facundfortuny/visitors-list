@@ -3,6 +3,7 @@
     <div class="buttons is-pulled-right">
       <button
         class="button is-info is-large is-light"
+        [disabled]="editMode"
         (click)="addNewVisitor()"
       >
         <fa-icon [icon]="iconfaUserPlus"></fa-icon>
@@ -13,8 +14,11 @@
 </section>
 <section class="section">
   <div class="container">
-    <div *ngFor="let visitor of visitorsList">
-      <app-visitor [visitor]="visitor"></app-visitor>
+    <div *ngFor="let visitor of visitorsList; let i = index">
+      <app-visitor
+        [visitor]="visitor"
+        (closeVisitor)="closeVisitor($event, i)"
+      ></app-visitor>
     </div>
   </div>
 </section>

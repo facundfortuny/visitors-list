@@ -1,14 +1,133 @@
-<div class="box">
-  <div class="content">
-    <div class="columns">
-      <div class="column">
-        <fa-icon [icon]="iconFaUser"></fa-icon>
-        <span class="visitor-text">{{ visitor.name }}</span>
+<ng-container *ngIf="editMode; else displayMode">
+  <form novalidate [formGroup]="visitorForm" (ngSubmit)="submitForm()">
+    <div class="box">
+      <div class="content">
+        <div class="columns">
+          <div class="column">
+            <div class="field">
+              <label class="label">Name</label>
+              <div class="control has-icons-left has-icons-right">
+                <input
+                  class="input"
+                  [ngClass]="[
+                    isValidInput(visitorForm.get('name')) ? 'is-success' : '',
+                    isInvalidInput(visitorForm.get('name')) ? 'is-danger' : ''
+                  ]"
+                  type="text"
+                  placeholder="Name"
+                  formControlName="name"
+                />
+                <span class="icon is-small is-left">
+                  <fa-icon [icon]="iconUser"></fa-icon>
+                </span>
+                <span class="icon is-small is-right">
+                  <fa-icon
+                    *ngIf="isValidInput(visitorForm.get('name'))"
+                    [icon]="iconCheck"
+                  ></fa-icon>
+
+                  <fa-icon
+                    *ngIf="isInvalidInput(visitorForm.get('name'))"
+                    [icon]="iconExcl"
+                  ></fa-icon>
+                </span>
+              </div>
+              <p
+                class="help is-danger"
+                *ngIf="
+                  visitorForm.get('name').hasError('required') &&
+                  visitorForm.get('name').touched
+                "
+              >
+                Name is required
+              </p>
+            </div>
+          </div>
+          <div class="column">
+            <div class="field">
+              <label class="label">Email</label>
+              <div class="control has-icons-left has-icons-right">
+                <input
+                  class="input"
+                  [ngClass]="[
+                    isValidInput(visitorForm.get('email')) ? 'is-success' : '',
+                    isInvalidInput(visitorForm.get('email')) ? 'is-danger' : ''
+                  ]"
+                  type="email"
+                  placeholder="Email"
+                  formControlName="email"
+                  email
+                />
+                <span class="icon is-small is-left">
+                  <fa-icon [icon]="iconAt"></fa-icon>
+                </span>
+                <span class="icon is-small is-right">
+                  <fa-icon
+                    *ngIf="isValidInput(visitorForm.get('email'))"
+                    [icon]="iconCheck"
+                  ></fa-icon>
+
+                  <fa-icon
+                    *ngIf="isInvalidInput(visitorForm.get('email'))"
+                    [icon]="iconExcl"
+                  ></fa-icon>
+                </span>
+              </div>
+              <ng-container
+                *ngIf="
+                  visitorForm.get('email').invalid &&
+                  visitorForm.get('email').touched
+                "
+              >
+                <p
+                  class="help is-danger"
+                  *ngIf="visitorForm.get('email').hasError('pattern')"
+                >
+                  Email is invalid
+                </p>
+                <p
+                  class="help is-danger"
+                  *ngIf="visitorForm.get('email').hasError('required')"
+                >
+                  Email is required
+                </p>
+              </ng-container>
+            </div>
+          </div>
+        </div>
+        <div class="field is-grouped">
+          <div class="control">
+            <button
+              class="button is-link"
+              type="submit"
+              [disabled]="visitorForm.invalid"
+            >
+              Save
+            </button>
+          </div>
+          <div class="control">
+            <button class="button is-link is-light" (click)="cancel()">
+              Cancel
+            </button>
+          </div>
+        </div>
       </div>
-      <div class="column">
-        <fa-icon [icon]="iconFaAt"></fa-icon>
-        <span class="visitor-text">{{ visitor.email }}</span>
+    </div>
+  </form>
+</ng-container>
+<ng-template #displayMode>
+  <div class="box" (click)="changeEditMode()">
+    <div class="content">
+      <div class="columns">
+        <div class="column">
+          <fa-icon [icon]="iconUser"></fa-icon>
+          <span class="visitor-text">{{ visitorForm.get("name").value }}</span>
+        </div>
+        <div class="column">
+          <fa-icon [icon]="iconAt"></fa-icon>
+          <span class="visitor-text">{{ visitorForm.get("email").value }}</span>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</ng-template>

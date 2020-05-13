@@ -6,19 +6,17 @@ import { AppComponent } from './app.component';
 import { VisitorsListComponent } from './visitors-list/visitors-list.component';
 import { VisitorComponent } from './visitor/visitor.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    VisitorsListComponent,
-    VisitorComponent
-  ],
+  declarations: [AppComponent, VisitorsListComponent, VisitorComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    ReactiveFormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -9,6 +9,7 @@ import { faUserPlus } from '@fortawesome/free-solid-svg-icons';
 })
 export class VisitorsListComponent implements OnInit {
   visitorsList: Array<Visitor> = [];
+  editMode = false;
   iconfaUserPlus = faUserPlus;
 
   constructor() {}
@@ -16,6 +17,17 @@ export class VisitorsListComponent implements OnInit {
   ngOnInit(): void {}
 
   addNewVisitor() {
-    this.visitorsList.push({ name: 'visitor1', email: 'visitor1@test.com' });
+    this.editMode = true;
+    this.visitorsList.push({
+      name: '',
+      email: '',
+    });
+  }
+
+  closeVisitor(visitor, index) {
+    this.editMode = false;
+    if (visitor.name === '' || visitor.email === '') {
+      this.visitorsList.splice(index, 1);
+    }
   }
 }
