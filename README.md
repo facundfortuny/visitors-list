@@ -1,27 +1,24 @@
-# VisitorsList
+# Visitors List
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.5.
+## Task description:
 
-## Development server
+It is necessary to create a simple application using Angular whose task is to generate and update the list of visitors.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+When the application is opened the list is empty and by clicking on ""Add new"" the input control for entering the person's name and email appears.
 
-## Code scaffolding
+When you click ""Save"" the input should no longer be displayed and instead should be the person's name and the corresponding email in text form.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+The update happens when that person is clicked and instead of text we have input control again.
 
-## Build
+It is possible to enter an unlimited number of people. It is necessary to disable the addition / rescue of visitors without valid data and display the appropriate message to the user of the application.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+
+## How to use it
+
+1. Install npm dependencies, you will need to run `npm install`.
+2. Start the develop server, you will need to run `ng serve` for a dev server.
+3. Navigate to `http://localhost:4200/` on the browser.
 
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Run `ng test` to execute the unit tests.
