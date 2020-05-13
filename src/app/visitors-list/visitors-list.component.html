@@ -1,0 +1,28 @@
+<section class="section">
+  <div class="container">
+    <div class="buttons is-pulled-right">
+      <button
+        class="button is-info is-large is-light"
+        (click)="addNewVisitor()"
+      >
+        New Visitor
+      </button>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div *ngFor="let visitor of visitorsList">
+      <div class="box">
+        <article class="media">
+          <div class="media-content">
+            <div class="content">
+              {{ visitor.name }}
+              {{ visitor.email }}
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
