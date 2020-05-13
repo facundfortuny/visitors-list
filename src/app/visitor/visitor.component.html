@@ -8,6 +8,7 @@
               <label class="label">Name</label>
               <div class="control has-icons-left has-icons-right">
                 <input
+                  id="inputName"
                   class="input"
                   [ngClass]="[
                     isValidInput(visitorForm.get('name')) ? 'is-success' : '',
@@ -48,6 +49,7 @@
               <label class="label">Email</label>
               <div class="control has-icons-left has-icons-right">
                 <input
+                  id="inputEmail"
                   class="input"
                   [ngClass]="[
                     isValidInput(visitorForm.get('email')) ? 'is-success' : '',
@@ -121,11 +123,15 @@
       <div class="columns">
         <div class="column">
           <fa-icon [icon]="iconUser"></fa-icon>
-          <span class="visitor-text">{{ visitorForm.get("name").value }}</span>
+          <span id="name" class="visitor-text">{{
+            visitorForm.get("name").value
+          }}</span>
         </div>
         <div class="column">
           <fa-icon [icon]="iconAt"></fa-icon>
-          <span class="visitor-text">{{ visitorForm.get("email").value }}</span>
+          <span id="email" fclass="visitor-text">{{
+            visitorForm.get("email").value
+          }}</span>
         </div>
       </div>
     </div>
