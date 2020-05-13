@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Visitor } from '../shared/models/visitor.model';
+import { faUserPlus } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-visitors-list',
@@ -8,6 +9,7 @@ import { Visitor } from '../shared/models/visitor.model';
 })
 export class VisitorsListComponent implements OnInit {
   visitorsList: Array<Visitor> = [];
+  iconfaUserPlus = faUserPlus;
 
   constructor() {}
 

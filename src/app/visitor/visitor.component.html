@@ -2,10 +2,12 @@
   <div class="content">
     <div class="columns">
       <div class="column">
-        {{ visitor.name }}
+        <fa-icon [icon]="iconFaUser"></fa-icon>
+        <span class="visitor-text">{{ visitor.name }}</span>
       </div>
       <div class="column">
-        {{ visitor.email }}
+        <fa-icon [icon]="iconFaAt"></fa-icon>
+        <span class="visitor-text">{{ visitor.email }}</span>
       </div>
     </div>
   </div>
