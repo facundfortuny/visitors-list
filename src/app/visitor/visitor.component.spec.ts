@@ -10,14 +10,14 @@ describe('VisitorComponent', () => {
   let fixture: ComponentFixture<VisitorComponent>;
   const visitor = {
     name: 'John Snow',
-    email: 'johnsnow@got.com',
+    email: 'johnsnow@got.com'
   };
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [VisitorComponent],
       providers: [FormBuilder],
-      schemas: [NO_ERRORS_SCHEMA],
+      schemas: [NO_ERRORS_SCHEMA]
     }).compileComponents();
   }));
 

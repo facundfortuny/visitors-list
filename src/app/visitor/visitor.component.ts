@@ -1,25 +1,14 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import {
-  FormGroup,
-  FormBuilder,
-  Validators,
-  FormControl,
-  AbstractControl,
-} from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormControl, AbstractControl } from '@angular/forms';
 
-import {
-  faUser,
-  faAt,
-  faCheck,
-  faExclamationTriangle,
-} from '@fortawesome/free-solid-svg-icons';
+import { faUser, faAt, faCheck, faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 
 import { Visitor } from '../shared/models/visitor.model';
 
 @Component({
   selector: 'app-visitor',
   templateUrl: './visitor.component.html',
-  styleUrls: ['./visitor.component.scss'],
+  styleUrls: ['./visitor.component.scss']
 })
 export class VisitorComponent implements OnInit {
   @Input() visitor: Visitor;
@@ -45,11 +34,9 @@ export class VisitorComponent implements OnInit {
         visitor.email,
         [
           Validators.required,
-          Validators.pattern(
-            /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i
-          ),
-        ],
-      ],
+          Validators.pattern(/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i)
+        ]
+      ]
     });
   }
 

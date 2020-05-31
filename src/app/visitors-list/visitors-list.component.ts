@@ -5,7 +5,7 @@ import { faUserPlus } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-visitors-list',
   templateUrl: './visitors-list.component.html',
-  styleUrls: ['./visitors-list.component.scss'],
+  styleUrls: ['./visitors-list.component.scss']
 })
 export class VisitorsListComponent implements OnInit {
   visitorsList: Array<Visitor> = [];
@@ -20,7 +20,7 @@ export class VisitorsListComponent implements OnInit {
     this.editMode = true;
     this.visitorsList.push({
       name: '',
-      email: '',
+      email: ''
     });
   }
 

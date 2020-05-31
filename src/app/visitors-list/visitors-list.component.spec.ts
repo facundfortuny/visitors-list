@@ -13,7 +13,7 @@ describe('VisitorsListComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [VisitorsListComponent],
-      schemas: [NO_ERRORS_SCHEMA],
+      schemas: [NO_ERRORS_SCHEMA]
     }).compileComponents();
   }));
 
@@ -21,8 +21,7 @@ describe('VisitorsListComponent', () => {
     fixture = TestBed.createComponent(VisitorsListComponent);
     component = fixture.componentInstance;
     element = fixture.debugElement.nativeElement;
-    newVisitorButton = fixture.debugElement.query(By.css('button'))
-      .nativeElement;
+    newVisitorButton = fixture.debugElement.query(By.css('button')).nativeElement;
     fixture.detectChanges();
   });
 
